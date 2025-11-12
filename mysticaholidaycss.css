@@ -1,62 +1,93 @@
-/* Mystica DJEP Theme CSS */
+/* Mystica Entertainment Corporate Theme for DJEP */
 
-/* Background gradient */
+/* Global styles */
 body {
-  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
-  color: #000; /* Default text color for readability */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  overflow-x: hidden;
+    background: linear-gradient(135deg, #0d1b2a, #1f3a6e); /* dark blue gradient */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
 }
 
-/* White text sections */
-.section-text {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px;
+/* Falling snow animation */
+@keyframes snow {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
 }
 
-/* Button styling */
-button, .btn {
-  background: linear-gradient(135deg, #0077ff, #00aaff);
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
-  transition: all 0.3s ease;
-}
-button:hover, .btn:hover {
-  box-shadow: 0 0 16px rgba(0, 170, 255, 0.8);
-  transform: translateY(-2px);
-}
-
-/* Falling snow effect */
 .snowflake {
-  position: fixed;
-  top: -10px;
-  z-index: 9999;
-  user-select: none;
-  pointer-events: none;
-  color: #fff;
-  font-size: 1em;
-  animation-name: fall;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+    position: fixed;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: snow linear infinite;
 }
 
-@keyframes fall {
-  0% { transform: translateY(-10px) translateX(0); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(110vh) translateX(50px); opacity: 0; }
+.snowflake:nth-child(1) { left: 5%; animation-duration: 12s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 15%; animation-duration: 18s; animation-delay: 3s; }
+.snowflake:nth-child(3) { left: 25%; animation-duration: 14s; animation-delay: 1s; }
+.snowflake:nth-child(4) { left: 35%; animation-duration: 16s; animation-delay: 2s; }
+.snowflake:nth-child(5) { left: 45%; animation-duration: 10s; animation-delay: 4s; }
+.snowflake:nth-child(6) { left: 55%; animation-duration: 20s; animation-delay: 1s; }
+.snowflake:nth-child(7) { left: 65%; animation-duration: 15s; animation-delay: 3s; }
+.snowflake:nth-child(8) { left: 75%; animation-duration: 17s; animation-delay: 0s; }
+.snowflake:nth-child(9) { left: 85%; animation-duration: 13s; animation-delay: 2s; }
+.snowflake:nth-child(10) { left: 95%; animation-duration: 19s; animation-delay: 1s; }
+
+/* Text and forms */
+.djep-form, 
+input, 
+textarea, 
+select {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* JS injection via CSS trick for DJEP */
-@import url('https://cdn.jsdelivr.net/gh/hmargaretmclaren-create/Mystica-themes/snowflakes.js');
+label {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Buttons */
+button, .djep-submit-button {
+    background: linear-gradient(135deg, #1f6fc1, #0d3a6e);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(31,111,193,0.6);
+}
+
+button:hover, .djep-submit-button:hover {
+    background: linear-gradient(135deg, #0d3a6e, #1f6fc1);
+    box-shadow: 0 0 15px rgba(31,111,193,0.8);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #ffffff;
+}
+
+/* Add snow elements */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
