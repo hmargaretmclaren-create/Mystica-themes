@@ -1,0 +1,96 @@
+/* Mystica Entertainment DJEP Custom Theme */
+
+/* Body & Background */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #0047AB, #007BFF);
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Forms & Containers */
+form, .djep-container, .djep-section {
+    background: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Input Fields */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button, .djep-button {
+    background: linear-gradient(135deg, #007BFF, #00A1FF);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button:hover, .djep-button:hover {
+    background: linear-gradient(135deg, #005BBB, #0090E0);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #0047AB;
+    margin-top: 0;
+}
+
+/* Links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Miscellaneous */
+.djep-section {
+    margin-bottom: 24px;
+}
+
+/* Scrollbars for Chrome/Edge */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #007BFF;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #005BBB;
+}
