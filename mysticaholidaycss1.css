@@ -1,48 +1,40 @@
-/*
-=====================================
-Mystica Holiday Theme for DJEP
-HTML + CSS + JS combined in one file
-=====================================
-*/
+/* Mystica DJEP Theme CSS */
 
-/* --- HTML section --- */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom right, #0a3d62, #3c6382);
-  z-index: -1;
-}
-
-/* Container for portal content */
-#djep-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+/* Background gradient */
+body {
+  background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+  color: #000; /* Default text color for readability */
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Buttons */
-button {
-  background: linear-gradient(to right, #2e86de, #3498db);
+/* White text sections */
+.section-text {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+/* Button styling */
+button, .btn {
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+  color: #fff;
+  padding: 12px 24px;
   border: none;
-  color: white;
-  font-size: 16px;
-  padding: 12px 28px;
-  margin: 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5);
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
-button:hover {
+button:hover, .btn:hover {
+  box-shadow: 0 0 16px rgba(0, 170, 255, 0.8);
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
 /* Falling snow effect */
@@ -52,27 +44,19 @@ button:hover {
   z-index: 9999;
   user-select: none;
   pointer-events: none;
-  color: white;
+  color: #fff;
   font-size: 1em;
-  opacity: 0.8;
-  animation: fall linear infinite;
+  animation-name: fall;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(100vh) rotate(360deg); }
+  0% { transform: translateY(-10px) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(110vh) translateX(50px); opacity: 0; }
 }
 
-/* --- JS section --- */
-document.addEventListener("DOMContentLoaded", function() {
-  const snowCount = 50;
-  for (let i = 0; i < snowCount; i++) {
-    const snow = document.createElement("div");
-    snow.className = "snowflake";
-    snow.style.left = Math.random() * window.innerWidth + "px";
-    snow.style.fontSize = 10 + Math.random() * 20 + "px";
-    snow.style.animationDuration = 5 + Math.random() * 5 + "s";
-    snow.textContent = "❄";
-    document.body.appendChild(snow);
-  }
-});
+/* JS injection via CSS trick for DJEP */
+@import url('https://cdn.jsdelivr.net/gh/hmargaretmclaren-create/Mystica-themes/snowflakes.js');
